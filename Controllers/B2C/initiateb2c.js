@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 const initiateB2c = async (req, res) => {
   try {
     //this request assumes you have added generate token middleware. If not check the code and add the middleware

@@ -1,7 +1,5 @@
 const whiteListedIps = require("../../utils/whitelistedIps");
 
-whiteListedIps;
-
 const handleCallback = (req, res) => {
   //safaricom sends a post request with data of the transaction wheather completed or not
 

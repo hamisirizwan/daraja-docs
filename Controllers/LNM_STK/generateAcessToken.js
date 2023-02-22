@@ -1,8 +1,8 @@
 const axios = require("axios");
 
-const generateTokenMiddleware = async (req, res, next) => {
-  const key = process.env.B2C_CONSUMER_KEY;
-  const secret = process.env.B2C_SECRET_KEY;
+const generateAccessToken = async (req, res, next) => {
+  const key = process.env.MPESA_CONSUMER_KEY;
+  const secret = process.env.MPESA_SECRET_KEY;
   const auth = new Buffer.from(`${key}:${secret}`).toString("base64");
 
   await axios
@@ -15,7 +15,6 @@ const generateTokenMiddleware = async (req, res, next) => {
       }
     )
     .then((res) => {
-      //   resp.status(200).json(res.data);
       token = res.data.access_token;
       // console.log(token);
 
@@ -25,4 +24,4 @@ const generateTokenMiddleware = async (req, res, next) => {
       console.log(err);
     });
 };
-module.exports = generateTokenMiddleware;
+module.exports = generateAccessToken;

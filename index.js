@@ -3,6 +3,7 @@ const app = express();
 require("dotenv").config();
 const cors = require("cors");
 const B2C = require("./routes/b2c");
+const STK = require("./routes/stk");
 const port = process.env.PORT || 8080;
 
 //required middlewares
@@ -15,4 +16,5 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/b2c", B2C);
+app.use("/api/stk", STK);
 app.listen(port, () => console.log(`server up and running at port: ${port}`));
