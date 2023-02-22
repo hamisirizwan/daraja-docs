@@ -10,9 +10,9 @@ const initiateB2c = async (req, res) => {
         Amount: 10, //amount
         PartyA: "600123", //b2c shortcode
         PartyB: "254768793923", //receiving phone
-        Remarks: "Rhone withdrawal",
-        QueueTimeOutURL: "https://mydomain.com/path", //route to time-out callback handler
-        ResultURL: "https://mydomain.com/path", //route to results callback handler
+        Remarks: "any remarks",
+        QueueTimeOutURL: "https://mydomain.com/api/b2c/b2c-callback-handler", //route to time-out callback handler
+        ResultURL: "https://mydomain.com/api/b2c/timeout-handler", //route to results callback handler
         Occassion: "", //any
       },
       {
@@ -21,7 +21,6 @@ const initiateB2c = async (req, res) => {
         },
       }
     );
-
     res.send(resp);
   } catch (error) {
     console.log(error);
